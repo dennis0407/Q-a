@@ -67,12 +67,12 @@ class QuestionViewController: UIViewController {
             remainingTime -= 1
             countdownTimerLabel.text = remainingTime.description
         }
-        //over time
+        //over time and skip this question
         else{
             curIdx += 1
             
             
-            if curIdx != 10{
+            if curIdx < 10{
                 
                 currentQusetionLabel.text = "\(curIdx + 1)/10"
                 
@@ -80,13 +80,14 @@ class QuestionViewController: UIViewController {
                 
                 questions[curIdx].options.shuffle()
                 
+                //set option
                 for idx in 0..<questions[curIdx].options.count
                 {
                     selectButtons[idx].setTitle(questions[curIdx].options[idx], for: .normal)
                 }
                 
             }
-            //the final question
+            //finish all question
             else{
              
                 stopTimer()
@@ -96,6 +97,7 @@ class QuestionViewController: UIViewController {
                 let restartButton = UIAlertAction(title: "重新一次", style: .default, handler: {
                     (action: UIAlertAction!) -> Void in
                     self.startGame()
+                    self.startTimer()
                     
                 })
                 
@@ -104,6 +106,7 @@ class QuestionViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
             
+            //due to overtime so reset the clock
             remainingTime = 20
             countdownTimerLabel.text = remainingTime.description
         }
@@ -112,7 +115,6 @@ class QuestionViewController: UIViewController {
     
     func startGame(){
         
-       
         remainingTime = 20
         countdownTimerLabel.text = remainingTime.description
         
@@ -197,6 +199,7 @@ class QuestionViewController: UIViewController {
             let restartButton = UIAlertAction(title: "重新一次", style: .default, handler: {
                 (action: UIAlertAction!) -> Void in
                 self.startGame()
+                self.startTimer()
                 
             })
             
