@@ -20,7 +20,6 @@ struct PlayerInfo {
     var score: Int
 }
 
-
 struct SubjectInfo {
     var selectSubject: subject
     var finishSubject: [Bool]
