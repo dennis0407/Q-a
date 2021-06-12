@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A45D102266B5B450076748A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45D101266B5B450076748A /* TestViewController.swift */; };
 		1A4EF08E26639FE000F91A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF08D26639FE000F91A96 /* AppDelegate.swift */; };
 		1A4EF09026639FE000F91A96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF08F26639FE000F91A96 /* SceneDelegate.swift */; };
 		1A4EF09526639FE000F91A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4EF09326639FE000F91A96 /* Main.storyboard */; };
@@ -16,6 +17,13 @@
 		1A4EF0B026639FE000F91A96 /* Q_AUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF0AF26639FE000F91A96 /* Q_AUITests.swift */; };
 		1A4EF0BE2663A02000F91A96 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF0BD2663A02000F91A96 /* QuestionViewController.swift */; };
 		1A4EF0C02663A02B00F91A96 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF0BF2663A02B00F91A96 /* Question.swift */; };
+		1A779D2B266B350E00D312CA /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A779D2A266B350E00D312CA /* SubjectViewController.swift */; };
+		1A8588872670C8B000359D7C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8588862670C8B000359D7C /* ResultViewController.swift */; };
+		1A8588972674DFF000359D7C /* Xingkai.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 1A8588962674DFF000359D7C /* Xingkai.ttc */; };
+		1A85889A2674E40900359D7C /* Lantinghei.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 1A8588992674E40900359D7C /* Lantinghei.ttc */; };
+		1AC73F11266B2D57006999F7 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC73F10266B2D57006999F7 /* PlayerInfo.swift */; };
+		1AC73F13266B2E47006999F7 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC73F12266B2E47006999F7 /* BeginViewController.swift */; };
+		1AC73F15266B2E9D006999F7 /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC73F14266B2E9D006999F7 /* CommonFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A45D101266B5B450076748A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1A4EF08A26639FDF00F91A96 /* Q&A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q&A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4EF08D26639FE000F91A96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A4EF08F26639FE000F91A96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +60,13 @@
 		1A4EF0B126639FE000F91A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4EF0BD2663A02000F91A96 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		1A4EF0BF2663A02B00F91A96 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1A779D2A266B350E00D312CA /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		1A8588862670C8B000359D7C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		1A8588962674DFF000359D7C /* Xingkai.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Xingkai.ttc; path = "../../../行楷/Xingkai TC/Xingkai.ttc"; sourceTree = "<group>"; };
+		1A8588992674E40900359D7C /* Lantinghei.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Lantinghei.ttc; path = "../../../蘭亭黑/Lantinghei TC/Lantinghei.ttc"; sourceTree = "<group>"; };
+		1AC73F10266B2D57006999F7 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		1AC73F12266B2E47006999F7 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		1AC73F14266B2E9D006999F7 /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,8 @@
 		1A4EF08C26639FDF00F91A96 /* Q&A */ = {
 			isa = PBXGroup;
 			children = (
+				1A8588992674E40900359D7C /* Lantinghei.ttc */,
+				1A8588962674DFF000359D7C /* Xingkai.ttc */,
 				1A4EF08D26639FE000F91A96 /* AppDelegate.swift */,
 				1A4EF08F26639FE000F91A96 /* SceneDelegate.swift */,
 				1A4EF09326639FE000F91A96 /* Main.storyboard */,
@@ -109,6 +127,12 @@
 				1A4EF09B26639FE000F91A96 /* Info.plist */,
 				1A4EF0BD2663A02000F91A96 /* QuestionViewController.swift */,
 				1A4EF0BF2663A02B00F91A96 /* Question.swift */,
+				1AC73F10266B2D57006999F7 /* PlayerInfo.swift */,
+				1AC73F12266B2E47006999F7 /* BeginViewController.swift */,
+				1AC73F14266B2E9D006999F7 /* CommonFunction.swift */,
+				1A779D2A266B350E00D312CA /* SubjectViewController.swift */,
+				1A45D101266B5B450076748A /* TestViewController.swift */,
+				1A8588862670C8B000359D7C /* ResultViewController.swift */,
 			);
 			path = "Q&A";
 			sourceTree = "<group>";
@@ -234,6 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8588972674DFF000359D7C /* Xingkai.ttc in Resources */,
+				1A85889A2674E40900359D7C /* Lantinghei.ttc in Resources */,
 				1A4EF09A26639FE000F91A96 /* LaunchScreen.storyboard in Resources */,
 				1A4EF09726639FE000F91A96 /* Assets.xcassets in Resources */,
 				1A4EF09526639FE000F91A96 /* Main.storyboard in Resources */,
@@ -261,9 +287,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC73F13266B2E47006999F7 /* BeginViewController.swift in Sources */,
+				1AC73F15266B2E9D006999F7 /* CommonFunction.swift in Sources */,
+				1AC73F11266B2D57006999F7 /* PlayerInfo.swift in Sources */,
 				1A4EF08E26639FE000F91A96 /* AppDelegate.swift in Sources */,
 				1A4EF0C02663A02B00F91A96 /* Question.swift in Sources */,
+				1A8588872670C8B000359D7C /* ResultViewController.swift in Sources */,
+				1A779D2B266B350E00D312CA /* SubjectViewController.swift in Sources */,
 				1A4EF09026639FE000F91A96 /* SceneDelegate.swift in Sources */,
+				1A45D102266B5B450076748A /* TestViewController.swift in Sources */,
 				1A4EF0BE2663A02000F91A96 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

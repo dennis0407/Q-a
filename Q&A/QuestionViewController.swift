@@ -15,7 +15,7 @@ class QuestionViewController: UIViewController {
     var remainingTime = 0
     @IBOutlet weak var questionTextView: UITextView!
     
-    @IBOutlet var controllerView: UIView!
+    
     @IBOutlet weak var countdownTimerLabel: UILabel!
     
     @IBOutlet weak var currentQusetionLabel: UILabel!
@@ -28,11 +28,7 @@ class QuestionViewController: UIViewController {
         startGame()
         startTimer()
         
-        let backgroundImage = UIImage(named: "background")
-        
-        let ImageView = UIImageView(image: backgroundImage)
-        ImageView.frame = controllerView.frame
-        view.insertSubview(ImageView, at: 0)
+        view.insertSubview(produceBackground(view.frame), at: 0)
         
     }
     
