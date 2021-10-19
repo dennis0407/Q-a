@@ -15,11 +15,11 @@ class BeginViewController: UIViewController, UITextFieldDelegate {
     var player : PlayerInfo?
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         view.insertSubview(produceBackground(view.frame), at: 0)
-        
         nameTextField.delegate = self
-        
-    }
+        }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -30,8 +30,17 @@ class BeginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBSegueAction func ChangeToSubjectView(_ coder: NSCoder) -> SubjectViewController? {
-       SubjectViewController(coder: coder, player: player!)
+    //unwind segue from ResultViewController
+    @IBAction func reStart(segue: UIStoryboardSegue){
+        nameTextField.text = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "changetoSubject"){
+            if let controller = segue.destination as? SubjectViewController{
+                controller.player = self.player
+            }
+        }
     }
     
     @IBAction func startGame(_ sender: Any) {
@@ -52,3 +61,5 @@ class BeginViewController: UIViewController, UITextFieldDelegate {
     
     
 }
+
+

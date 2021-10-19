@@ -9,14 +9,15 @@ import UIKit
 
 class TestViewController: UIViewController {
     
-    var player: PlayerInfo!
-    var testSubject : SubjectInfo!
+    var player: PlayerInfo?
+    var testSubject : SubjectInfo?
     let idx = 0
     var curIdx = 0
     var timer : Timer?
     var currQuestion = 1
     var remainingTime = 0
     var isFinalQusetion = false
+
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var questionTextView: UITextView!
@@ -29,45 +30,30 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
         view.insertSubview(produceBackground(view.frame), at: 0)
         
-        if  let player = player,
-            let testSubject = testSubject,
-            let questions = testSubject.questions{
-            subjectLabel.text = testSubject.selectSubject.rawValue
-            scoreLabel.text = player.score.description
-         
-            remainingTime = 20
-            countdownLabel.text = remainingTime.description
-            countdownLabel.text = "20"
-            currentQuestionLabel.text = "\(currQuestion)/\(testSubject.questionCount)"
-            questionTextView.text = questions[curIdx].question
-            
-            //set button title
-            for idx in 0..<questions[curIdx].options.count{
-                selectButtons[idx].setTitle(questions[curIdx].options[idx].description, for: .normal)
-                
-                startTimer()
-            }
-        }
+        updateUI()
+        startTimer()
         
-    
        
     }
     
-//    init(coder: NSCoder, player: PlayerInfo, testSubject: SubjectInfo){
-//        super.init(coder: coder)!
-//        self.player = player
-//        self.testSubject = testSubject
-//    }
-    
-    init(coder: NSCoder, player: PlayerInfo, testSubject: SubjectInfo, isFinalQusetion: Bool){
-        super.init(coder: coder)!
-        self.player = player
-        self.testSubject = testSubject
-        self.isFinalQusetion = isFinalQusetion
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func updateUI(){
+        guard let player = player, let testSubject = testSubject, let questions = testSubject.questions else {
+            return
+        }
+
+        subjectLabel.text = testSubject.selectSubject.rawValue
+        scoreLabel.text = player.score.description
+     
+        remainingTime = 20
+        countdownLabel.text = remainingTime.description
+       // countdownLabel.text = "20"
+        currentQuestionLabel.text = "\(currQuestion)/\(testSubject.questionCount)"
+        questionTextView.text = questions[curIdx].question
+        
+        //set button title
+        for idx in 0..<questions[curIdx].options.count{
+            selectButtons[idx].setTitle(questions[curIdx].options[idx].description, for: .normal)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,12 +65,17 @@ class TestViewController: UIViewController {
     
     @IBAction func confirmAnswer(_ sender: UIButton){
         
+        guard let testSubject = testSubject, let _ = player else {
+            return
+        }
+
+        
         currQuestion += 1
         
         let answer = testSubject.questions![curIdx].answer
         
         if sender.currentTitle?.description == answer{
-            player.score += 10
+            self.player!.score += 10
             curIdx+=1
             nextQuestion()
             
@@ -110,39 +101,31 @@ class TestViewController: UIViewController {
     }
     
     func nextQuestion(){
-        
+        guard let testSubject = testSubject else {
+            return
+        }
+
         if curIdx == testSubject.questionCount{
             if isFinalQusetion {
                 performSegue(withIdentifier: "changetoResult", sender: nil)
             }
             else {
                 performSegue(withIdentifier: "backtoSubject", sender: nil)
+               
             }
             return
         }
-        remainingTime = 20
-        countdownLabel.text = remainingTime.description
-        currentQuestionLabel.text = "\(currQuestion)/\(testSubject.questionCount)"
         
-        subjectLabel.text = testSubject.selectSubject.rawValue
-        scoreLabel.text = player.score.description
-     
-        questionTextView.text = testSubject.questions![curIdx].question
+        updateUI()
         
-        for idx in 0..<testSubject.questions![curIdx].options.count{
-            selectButtons[idx].setTitle(testSubject.questions![curIdx].options[idx].description, for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changetoResult"{
+            if let controller = segue.destination as? ResultViewController{
+                controller.player = player
+            }
         }
-        
-        
-    }
-
-    @IBSegueAction func backtoSubjectSegue(_ coder: NSCoder) -> SubjectViewController? {
-        SubjectViewController(coder: coder, player: player, beginSubject: testSubject)
-    }
-    
-    
-    @IBSegueAction func changetoResultSegue(_ coder: NSCoder) -> ResultViewController? {
-         ResultViewController(coder: coder, player: player)
     }
     
     
@@ -157,7 +140,7 @@ class TestViewController: UIViewController {
     }
     
     func stopTimer(){
-        if timer != nil{
+        if let _ = timer{
             timer!.invalidate()
             timer = nil
         }
@@ -165,6 +148,10 @@ class TestViewController: UIViewController {
     
     @objc func countdown(){
         
+        guard let testSubject = testSubject, let questions = testSubject.questions else {
+            return
+        }
+
        
         if remainingTime > 0{
             remainingTime -= 1
@@ -179,7 +166,7 @@ class TestViewController: UIViewController {
                 
                 currentQuestionLabel.text = "\(curIdx + 1)/\(testSubject.questionCount)"
                 questionTextView.text = questions[curIdx].question
-                
+               
                 
                 //set option
                 for idx in 0..<questions[curIdx].options.count

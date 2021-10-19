@@ -22,16 +22,6 @@ class ResultViewController: UIViewController {
         view.insertSubview(produceBackground(view.frame), at: 0)
     }
     
-    init?(coder: NSCoder, player: PlayerInfo){
-        super.init(coder: coder)!
-        self.player = player
-    }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)!
-    }
-    
-    @IBAction func restart(_ sender: Any) {
-    }
     
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BQx-rh-0bS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BQx-rh-0bS">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,7 +54,7 @@
                     <connections>
                         <outlet property="controllerView" destination="xI0-Ua-OIC" id="pYh-qV-Mmw"/>
                         <outlet property="nameTextField" destination="BML-K4-F8R" id="n4t-5z-LKL"/>
-                        <segue destination="8Cw-rb-b8y" kind="presentation" identifier="changetoSubject" destinationCreationSelector="ChangeToSubjectView:" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="K7p-Vy-nyB"/>
+                        <segue destination="8Cw-rb-b8y" kind="presentation" identifier="changetoSubject" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="K7p-Vy-nyB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoM-b2-2a8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -129,7 +130,7 @@
                         <outletCollection property="subjectButtons" destination="HDu-bM-fBD" collectionClass="NSMutableArray" id="uUk-yp-AXL"/>
                         <outletCollection property="subjectButtons" destination="Oyr-5c-9vu" collectionClass="NSMutableArray" id="IWm-Ib-JOP"/>
                         <outletCollection property="subjectButtons" destination="4Ep-4w-clM" collectionClass="NSMutableArray" id="8OA-XD-ia9"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="changetoTest" destinationCreationSelector="changetoTestSegue:" modalPresentationStyle="fullScreen" id="CL7-r3-PZY"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="changetoTest" modalPresentationStyle="fullScreen" id="CL7-r3-PZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8d-03-ZkW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -274,11 +275,12 @@
                         <outletCollection property="selectButtons" destination="8fq-Xm-bEN" collectionClass="NSMutableArray" id="Crk-Bo-yue"/>
                         <outletCollection property="selectButtons" destination="Bx2-Ai-r7O" collectionClass="NSMutableArray" id="6Ov-Je-A9f"/>
                         <outletCollection property="selectButtons" destination="6gz-8m-QeY" collectionClass="NSMutableArray" id="Qq3-la-Bgy"/>
-                        <segue destination="8Cw-rb-b8y" kind="presentation" identifier="backtoSubject" destinationCreationSelector="backtoSubjectSegue:" modalPresentationStyle="fullScreen" id="gFq-d9-MGP"/>
                         <segue destination="xd6-0c-nTa" kind="presentation" identifier="changetoResult" destinationCreationSelector="changetoResultSegue:" modalPresentationStyle="fullScreen" id="KyC-lH-l8P"/>
+                        <segue destination="XbA-Fj-bFd" kind="unwind" identifier="backtoSubject" unwindAction="backToSubjectViewControllerWithSegue:" id="OQw-dG-dkT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="XbA-Fj-bFd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1164" y="100"/>
         </scene>
@@ -317,8 +319,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="再玩一遍"/>
                                 <connections>
-                                    <action selector="restart:" destination="xd6-0c-nTa" eventType="touchUpInside" id="WdW-4r-jdR"/>
-                                    <segue destination="BQx-rh-0bS" kind="presentation" modalPresentationStyle="fullScreen" id="ZJT-IU-K8O"/>
+                                    <segue destination="ESv-x0-YiH" kind="unwind" unwindAction="reStartWithSegue:" id="t2W-Vi-6tc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gn-MX-Pv1">
@@ -338,155 +339,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6Z-Yc-b7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ESv-x0-YiH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2072.8000000000002" y="114.69265367316342"/>
-        </scene>
-        <!--Question View Controller-->
-        <scene sceneID="dg8-27-8UC">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="57s-2t-rqN" sceneMemberID="firstResponder"/>
-                <viewController id="L1W-yh-HnY" customClass="QuestionViewController" customModule="Q_A" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f8S-Ji-wAn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bja-wd-CDC">
-                                <rect key="frame" x="32" y="68" width="50" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fo9-vX-zlH">
-                                <rect key="frame" x="25" y="131" width="324" height="157"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83792116279999995" green="0.9504750327" blue="0.96848052740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="百萬小學堂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-OW-pr8">
-                                <rect key="frame" x="91" y="82" width="192" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cag-IW-QBe">
-                                <rect key="frame" x="25" y="325" width="324" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="wirteAnswer:" destination="L1W-yh-HnY" eventType="touchUpInside" id="GZK-DJ-8AM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu0-CX-CvA">
-                                <rect key="frame" x="25" y="380" width="324" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="wirteAnswer:" destination="L1W-yh-HnY" eventType="touchUpInside" id="eyn-zi-3rg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-jK-sjh">
-                                <rect key="frame" x="25" y="435" width="324" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="wirteAnswer:" destination="L1W-yh-HnY" eventType="touchUpInside" id="F2d-ho-VBv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDF-61-7Fo">
-                                <rect key="frame" x="25" y="490" width="324" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="wirteAnswer:" destination="L1W-yh-HnY" eventType="touchUpInside" id="Blu-6O-kPG"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akh-JI-q60">
-                                <rect key="frame" x="283" y="82" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="剩餘時間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSh-Tc-aoQ">
-                                <rect key="frame" x="212" y="39" width="56" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".PingFangTC-Regular" family=".AppleTraditionalChineseFont" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYb-yN-vtw">
-                                <rect key="frame" x="283" y="20" width="57" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="目前分數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7z-5y-Gs6">
-                                <rect key="frame" x="22" y="34" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="IQw-K2-dvj"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="countdownTimerLabel" destination="OYb-yN-vtw" id="hgs-xt-BvE"/>
-                        <outlet property="currentQusetionLabel" destination="akh-JI-q60" id="qLm-VH-tcq"/>
-                        <outlet property="questionTextView" destination="fo9-vX-zlH" id="x71-k3-02e"/>
-                        <outlet property="scoreLabel" destination="bja-wd-CDC" id="qOU-RP-yKz"/>
-                        <outletCollection property="selectButtons" destination="cag-IW-QBe" collectionClass="NSMutableArray" id="aTe-PL-9Il"/>
-                        <outletCollection property="selectButtons" destination="qu0-CX-CvA" collectionClass="NSMutableArray" id="jG6-he-vvw"/>
-                        <outletCollection property="selectButtons" destination="fhC-jK-sjh" collectionClass="NSMutableArray" id="5Pd-cd-PVJ"/>
-                        <outletCollection property="selectButtons" destination="aDF-61-7Fo" collectionClass="NSMutableArray" id="phb-0O-FJz"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="380" y="1782"/>
+            <point key="canvasLocation" x="2022" y="100"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="K7p-Vy-nyB"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -504,7 +361,7 @@
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
