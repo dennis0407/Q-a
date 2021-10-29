@@ -15,7 +15,7 @@ enum subject: String {
     case health = "健康"
 }
 
-struct PlayerInfo {
+struct PlayerInfo: Codable {
     let name: String
     var score: Int
 }

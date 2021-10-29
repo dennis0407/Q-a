@@ -15,7 +15,8 @@ class BeginViewController: UIViewController, UITextFieldDelegate {
     var player : PlayerInfo?
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        
         view.insertSubview(produceBackground(view.frame), at: 0)
         nameTextField.delegate = self
         }
@@ -59,6 +60,11 @@ class BeginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     
+    @IBAction func showScoreRanking(_ sender: Any) {
+        
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "\(ScoreViewController.self)") else { return }
+        present(controller, animated: true, completion: nil)
+    }
     
 }
 

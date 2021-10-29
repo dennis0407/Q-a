@@ -64,23 +64,29 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func confirmAnswer(_ sender: UIButton){
-        
         guard let testSubject = testSubject, let _ = player else {
             return
         }
-
         
         currQuestion += 1
         
         let answer = testSubject.questions![curIdx].answer
         
         if sender.currentTitle?.description == answer{
-            self.player!.score += 10
+            sender.backgroundColor = UIColor(red: 64/255, green: 224/255, blue: 208/255, alpha: 1)
+            self.player!.score += 5
             curIdx+=1
             nextQuestion()
-            
+        
         }
         else{
+            sender.backgroundColor = UIColor.red
+            for button in selectButtons {
+                if button.currentTitle?.description == answer{
+                    button.backgroundColor = UIColor(red: 64/255, green: 224/255, blue: 208/255, alpha: 1)
+                    break
+                }
+            }
             stopTimer()
             let alertController = UIAlertController(title: "答錯了", message: "正確答案是 \(testSubject.questions![curIdx].answer)", preferredStyle: .alert)
             
@@ -88,6 +94,7 @@ class TestViewController: UIViewController {
                 (action : UIAlertAction!) -> Void in
                 self.nextQuestion()
                 self.startTimer()
+                self.resetButtonColor()
             })
                 
             alertController.addAction(alertButton)
@@ -98,6 +105,12 @@ class TestViewController: UIViewController {
         
        
         
+    }
+    
+    func resetButtonColor(){
+        for button in selectButtons{
+            button.backgroundColor = UIColor.systemBackground
+        }
     }
     
     func nextQuestion(){
@@ -146,6 +159,10 @@ class TestViewController: UIViewController {
         }
     }
     
+    @IBAction func touchDown(_ sender: UIButton) {
+       //change button when press
+        resetButtonColor()
+    }
     @objc func countdown(){
         
         guard let testSubject = testSubject, let questions = testSubject.questions else {
@@ -194,5 +211,6 @@ class TestViewController: UIViewController {
     }
     
 
+  
     
 }

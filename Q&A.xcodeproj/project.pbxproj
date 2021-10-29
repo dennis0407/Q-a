@@ -16,6 +16,8 @@
 		1A4EF0A526639FE000F91A96 /* Q_ATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF0A426639FE000F91A96 /* Q_ATests.swift */; };
 		1A4EF0B026639FE000F91A96 /* Q_AUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF0AF26639FE000F91A96 /* Q_AUITests.swift */; };
 		1A4EF0C02663A02B00F91A96 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF0BF2663A02B00F91A96 /* Question.swift */; };
+		1A747D69272442EE002D9814 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A747D68272442EE002D9814 /* ScoreViewController.swift */; };
+		1A747D6B2724500D002D9814 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A747D6A2724500D002D9814 /* Score.swift */; };
 		1A779D2B266B350E00D312CA /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A779D2A266B350E00D312CA /* SubjectViewController.swift */; };
 		1A8588872670C8B000359D7C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8588862670C8B000359D7C /* ResultViewController.swift */; };
 		1A85889C2674E87F00359D7C /* Xingkai.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 1A85889B2674E87F00359D7C /* Xingkai.ttc */; };
@@ -57,6 +59,8 @@
 		1A4EF0AF26639FE000F91A96 /* Q_AUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_AUITests.swift; sourceTree = "<group>"; };
 		1A4EF0B126639FE000F91A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4EF0BF2663A02B00F91A96 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1A747D68272442EE002D9814 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		1A747D6A2724500D002D9814 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		1A779D2A266B350E00D312CA /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		1A8588862670C8B000359D7C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		1A85889B2674E87F00359D7C /* Xingkai.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xingkai.ttc; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				1A779D2A266B350E00D312CA /* SubjectViewController.swift */,
 				1A45D101266B5B450076748A /* TestViewController.swift */,
 				1A8588862670C8B000359D7C /* ResultViewController.swift */,
+				1A747D68272442EE002D9814 /* ScoreViewController.swift */,
+				1A747D6A2724500D002D9814 /* Score.swift */,
 			);
 			path = "Q&A";
 			sourceTree = "<group>";
@@ -287,7 +293,9 @@
 				1A4EF0C02663A02B00F91A96 /* Question.swift in Sources */,
 				1A8588872670C8B000359D7C /* ResultViewController.swift in Sources */,
 				1A779D2B266B350E00D312CA /* SubjectViewController.swift in Sources */,
+				1A747D69272442EE002D9814 /* ScoreViewController.swift in Sources */,
 				1A4EF09026639FE000F91A96 /* SceneDelegate.swift in Sources */,
+				1A747D6B2724500D002D9814 /* Score.swift in Sources */,
 				1A45D102266B5B450076748A /* TestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,6 +24,7 @@ class SubjectViewController: UIViewController {
         var unknownButton = false
         var selectQuestion: [Question]?
         
+        //Initialize beginSubject
         if beginSubject == nil{
             beginSubject = SubjectInfo(selectSubject: .geography, finishSubject: [false, false, false, false, false], questions: nil, questionCount: 5)
         }
@@ -90,6 +91,11 @@ class SubjectViewController: UIViewController {
                 controller.isFinalQusetion = self.isFinalQuestion
             }
         }
+        else if segue.identifier == "skiptoResult"{
+            if let controller = segue.destination as? ResultViewController{
+                controller.player = player
+            }
+        }
     }
     
     //undwind segue from testViewController
@@ -100,11 +106,27 @@ class SubjectViewController: UIViewController {
         
         if let beginSubject = beginSubject{
             for idx in 0..<beginSubject.finishSubject.count{
+                
                 if beginSubject.finishSubject[idx] == true{
-                    subjectButtons[idx].isEnabled = false
+                    searchTagButton(idx)?.isEnabled = false
                 }
             }
         }
     }
+    
+    
+    @IBAction func skipQuestion(_ sender: Any) {
+        performSegue(withIdentifier: "skiptoResult", sender: nil)
+    }
+    
+    func searchTagButton(_ tag: Int)->UIButton?{
+        for button in subjectButtons{
+            if button.tag == tag{
+                return button
+            }
+        }
+        return nil
+    }
+    
 }
 
